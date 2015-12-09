@@ -19,8 +19,10 @@
 "playButtonTitle" = "Play";
 
 //Difficulty
-"difficultyTitle" = "Game levels";
-
+"difficultyTitle" = "Choose your game level";
+"easyButtonTitle" = "Easy";
+"normalButtonTitle" = "Normal";
+"hardButtonTitle" = "Hard";
 
 //GameViewController
 "exitGameTitle" = "Quit?";

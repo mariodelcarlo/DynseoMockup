@@ -8,12 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
+//Generic game step if we have multiple types of game steps
 @interface GameStep : NSObject
-
-//Time spend to answer the step in seconds
-@property(nonatomic, assign) float timeSpend;
-
-
-
-
 @end

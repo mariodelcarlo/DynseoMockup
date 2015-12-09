@@ -29,6 +29,7 @@
 }
 
 #pragma mark private methods
+//Create an game with 10 aritmetic steps for a difficulty passed in param
 - (void)createGameForDifficulty:(GameDifficulty)theDifficulty{
     self.currentGame = [[Game alloc] init];
     [self.currentGame setTimeAllowedForEachStep:3];
@@ -44,22 +45,14 @@
 }
 
 
-
+//Generate a random number between 2 bounds, bounds are included
 - (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max{
     //arc4random_uniform returns value between 0 and the bounds set in parameter
     return min + arc4random_uniform(max - min + 1);
 }
 
 
-- (NSInteger)randomNumberWithMaxNumber:(NSInteger)max divisibleBy:(NSInteger)divisibleBy{
-    NSInteger resNumber = [self randomNumberBetween:1 maxNumber:max];
-    while(resNumber % divisibleBy != 0){
-        resNumber = [self randomNumberBetween:1 maxNumber:max];
-    }
-    return resNumber;
-}
-     
-     
+//Create an aritmetic step for a difficulty passed in param
 -(GameStepArithmetic*)createGameStepForDifficulty:(GameDifficulty)theDifficulty{
     NSInteger leftNumber;
     NSInteger rightNumber;
@@ -129,17 +122,8 @@
     return step1;
 }
 
--(void)startWithDifficulty:(GameDifficulty)theDifficulty{
-    [self createGameForDifficulty:theDifficulty];
-    if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(displayGameStepWithQuestion:)]){
-        
-        //Display first step of the game
-        GameStepArithmetic * step1 = self.currentGame.steps[0];
-        [self.gameDelegate displayGameStepWithQuestion:step1.question];
-    }
-}
 
-
+//Timer for a step
 -(void)stepTimerTick:(NSTimer *)timer {
     NSLog(@"stepElapsedTime =%d",self.stepElapsedTime);
     self.stepElapsedTime = self.stepElapsedTime + 1;
@@ -148,8 +132,8 @@
     }
 }
 
+//Method to show the next step if exists or end game
 -(void)showNextStep{
-    
     //Reset the timer
     self.stepElapsedTime = 0;
     [self.currentStepTimer invalidate];
@@ -209,4 +193,15 @@
     self.currentStepTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(stepTimerTick:) userInfo:nil repeats:YES];
 }
 
+#pragma mark public methods
+//Start a game: create a game and display the first step
+-(void)startWithDifficulty:(GameDifficulty)theDifficulty{
+    [self createGameForDifficulty:theDifficulty];
+    if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(displayGameStepWithQuestion:)]){
+        
+        //Display first step of the game
+        GameStepArithmetic * step1 = self.currentGame.steps[0];
+        [self.gameDelegate displayGameStepWithQuestion:step1.question];
+    }
+}
 @end

@@ -32,7 +32,10 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.titleLabel.text = NSLocalizedString(@"difficultyTitle", @"");
+    self.titleLabel.text = NSLocalizedString(@"difficultyTitle", @"difficultyTitle");
+    [self.easyButton setTitle:NSLocalizedString(@"easyButtonTitle", @"easyButtonTitle") forState:UIControlStateNormal];
+    [self.normalButton setTitle:NSLocalizedString(@"normalButtonTitle", @"normalButtonTitle") forState:UIControlStateNormal];
+    [self.hardButton setTitle:NSLocalizedString(@"hardButtonTitle", @"hardButtonTitle") forState:UIControlStateNormal];
 }
 
 

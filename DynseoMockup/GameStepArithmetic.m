@@ -10,6 +10,7 @@
 
 @implementation GameStepArithmetic
 
+#pragma mark init methods
 - (id)init{
     self = [super init];
     if (self) {
@@ -18,6 +19,7 @@
     return self;
 }
 
+#pragma mark utils methods
 -(NSString *)question{
     return [self questionForLeft:self.leftOperand right:self.rightOperand operator:self.gameOperator];
 }

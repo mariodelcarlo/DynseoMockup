@@ -9,6 +9,4 @@
 #import "GameStep.h"
 
 @implementation GameStep
-
-
 @end

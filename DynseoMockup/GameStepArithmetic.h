@@ -17,7 +17,6 @@ typedef NS_ENUM(NSUInteger, GameOperator) {
     GameOperatorDivision = 3
 };
 
-#define gameOperatorToString(enum) [@[@"+",@"_",@"*","/"] objectAtIndex:enum]
 
 @interface GameStepArithmetic : NSObject
 
