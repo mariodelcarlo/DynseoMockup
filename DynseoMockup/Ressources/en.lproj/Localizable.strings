@@ -1,0 +1,29 @@
+//
+//  Localizable.strings
+//  DynseoMockup
+//
+//  Created by Marie-Odile Del Carlo on 08/12/2015.
+//  Copyright © 2015 Marie-Odile Del Carlo. All rights reserved.
+//
+
+//Common
+"error" = "Error";
+"warning" = "Warning";
+"playerNameDefault" = "Guest";
+"yes" = "Yes";
+"no" = "No";
+"ok" = "OK";
+
+//Home
+"welcomeLabelTitle" = "Welcome !";
+"playButtonTitle" = "Play";
+
+//Difficulty
+"difficultyTitle" = "Game levels";
+
+
+//GameViewController
+"exitGameTitle" = "Quit?";
+"exitGameMessage" = "Do you want to quit the game?";
+"gameEndedTitle" = "Finished!";
+"gameEndedMessage" = "The game is finished.\nYour score is ";

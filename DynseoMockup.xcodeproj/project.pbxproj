@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF4EAEE01C186F28006FFCA1 /* DifficultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4EAEDF1C186F28006FFCA1 /* DifficultyViewController.m */; };
+		CF77987C1C18A54E007FE467 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CF77987B1C18A54E007FE467 /* Constants.m */; };
+		CF9BCF811C173EF5001B01FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCF801C173EF5001B01FD /* main.m */; };
+		CF9BCF841C173EF5001B01FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCF831C173EF5001B01FD /* AppDelegate.m */; };
+		CF9BCF8A1C173EF5001B01FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9BCF881C173EF5001B01FD /* Main.storyboard */; };
+		CF9BCF8C1C173EF6001B01FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF9BCF8B1C173EF6001B01FD /* Assets.xcassets */; };
+		CF9BCF8F1C173EF6001B01FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9BCF8D1C173EF6001B01FD /* LaunchScreen.storyboard */; };
+		CF9BCF9A1C173EF6001B01FD /* DynseoMockupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCF991C173EF6001B01FD /* DynseoMockupTests.m */; };
+		CF9BCFA51C173EF6001B01FD /* DynseoMockupUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFA41C173EF6001B01FD /* DynseoMockupUITests.m */; };
+		CF9BCFB41C173F3E001B01FD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFB31C173F3E001B01FD /* HomeViewController.m */; };
+		CF9BCFBF1C1746F1001B01FD /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFBE1C1746F1001B01FD /* GameViewController.m */; };
+		CF9BCFC41C174759001B01FD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF9BCFC11C174759001B01FD /* Localizable.strings */; };
+		CF9BCFC81C17495C001B01FD /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFC71C17495C001B01FD /* Game.m */; };
+		CF9BCFCB1C174CE8001B01FD /* GameStep.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFCA1C174CE8001B01FD /* GameStep.m */; };
+		CF9BCFCE1C174F85001B01FD /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFCD1C174F85001B01FD /* GameLogic.m */; };
+		CF9BCFD11C175727001B01FD /* GameStepArithmetic.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFD01C175727001B01FD /* GameStepArithmetic.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF9BCF961C173EF6001B01FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF9BCF741C173EF5001B01FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF9BCF7B1C173EF5001B01FD;
+			remoteInfo = DynseoMockup;
+		};
+		CF9BCFA11C173EF6001B01FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF9BCF741C173EF5001B01FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF9BCF7B1C173EF5001B01FD;
+			remoteInfo = DynseoMockup;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF4EAEDE1C186F28006FFCA1 /* DifficultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultyViewController.h; sourceTree = "<group>"; };
+		CF4EAEDF1C186F28006FFCA1 /* DifficultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultyViewController.m; sourceTree = "<group>"; };
+		CF77987A1C18A54E007FE467 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CF77987B1C18A54E007FE467 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		CF9BCF7C1C173EF5001B01FD /* DynseoMockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynseoMockup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF9BCF801C173EF5001B01FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF9BCF821C173EF5001B01FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CF9BCF831C173EF5001B01FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CF9BCF891C173EF5001B01FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CF9BCF8B1C173EF6001B01FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF9BCF8E1C173EF6001B01FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF9BCF901C173EF6001B01FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9BCF951C173EF6001B01FD /* DynseoMockupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynseoMockupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF9BCF991C173EF6001B01FD /* DynseoMockupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynseoMockupTests.m; sourceTree = "<group>"; };
+		CF9BCF9B1C173EF6001B01FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9BCFA01C173EF6001B01FD /* DynseoMockupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynseoMockupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF9BCFA41C173EF6001B01FD /* DynseoMockupUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynseoMockupUITests.m; sourceTree = "<group>"; };
+		CF9BCFA61C173EF6001B01FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF9BCFB21C173F3E001B01FD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		CF9BCFB31C173F3E001B01FD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		CF9BCFBD1C1746F1001B01FD /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		CF9BCFBE1C1746F1001B01FD /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		CF9BCFC21C174759001B01FD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CF9BCFC31C174759001B01FD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CF9BCFC61C17495C001B01FD /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		CF9BCFC71C17495C001B01FD /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		CF9BCFC91C174CE8001B01FD /* GameStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStep.h; sourceTree = "<group>"; };
+		CF9BCFCA1C174CE8001B01FD /* GameStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStep.m; sourceTree = "<group>"; };
+		CF9BCFCC1C174F85001B01FD /* GameLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLogic.h; sourceTree = "<group>"; };
+		CF9BCFCD1C174F85001B01FD /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLogic.m; sourceTree = "<group>"; };
+		CF9BCFCF1C175727001B01FD /* GameStepArithmetic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStepArithmetic.h; sourceTree = "<group>"; };
+		CF9BCFD01C175727001B01FD /* GameStepArithmetic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStepArithmetic.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF9BCF791C173EF5001B01FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF9BCF921C173EF6001B01FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF9BCF9D1C173EF6001B01FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF7798791C18A4F2007FE467 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				CF9BCFC61C17495C001B01FD /* Game.h */,
+				CF9BCFC71C17495C001B01FD /* Game.m */,
+				CF9BCFC91C174CE8001B01FD /* GameStep.h */,
+				CF9BCFCA1C174CE8001B01FD /* GameStep.m */,
+				CF9BCFCC1C174F85001B01FD /* GameLogic.h */,
+				CF9BCFCD1C174F85001B01FD /* GameLogic.m */,
+				CF9BCFCF1C175727001B01FD /* GameStepArithmetic.h */,
+				CF9BCFD01C175727001B01FD /* GameStepArithmetic.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		CF9BCF731C173EF5001B01FD = {
+			isa = PBXGroup;
+			children = (
+				CF9BCF7E1C173EF5001B01FD /* DynseoMockup */,
+				CF9BCF981C173EF6001B01FD /* DynseoMockupTests */,
+				CF9BCFA31C173EF6001B01FD /* DynseoMockupUITests */,
+				CF9BCF7D1C173EF5001B01FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF9BCF7D1C173EF5001B01FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF9BCF7C1C173EF5001B01FD /* DynseoMockup.app */,
+				CF9BCF951C173EF6001B01FD /* DynseoMockupTests.xctest */,
+				CF9BCFA01C173EF6001B01FD /* DynseoMockupUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF9BCF7E1C173EF5001B01FD /* DynseoMockup */ = {
+			isa = PBXGroup;
+			children = (
+				CF7798791C18A4F2007FE467 /* Game */,
+				CF9BCFC01C174759001B01FD /* Ressources */,
+				CF9BCFB51C173F6D001B01FD /* ViewControllers */,
+				CF9BCFC51C17476A001B01FD /* Utils */,
+				CF9BCF821C173EF5001B01FD /* AppDelegate.h */,
+				CF9BCF831C173EF5001B01FD /* AppDelegate.m */,
+				CF9BCF881C173EF5001B01FD /* Main.storyboard */,
+				CF9BCF8B1C173EF6001B01FD /* Assets.xcassets */,
+				CF9BCF8D1C173EF6001B01FD /* LaunchScreen.storyboard */,
+				CF9BCF901C173EF6001B01FD /* Info.plist */,
+				CF9BCF7F1C173EF5001B01FD /* Supporting Files */,
+			);
+			path = DynseoMockup;
+			sourceTree = "<group>";
+		};
+		CF9BCF7F1C173EF5001B01FD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF9BCF801C173EF5001B01FD /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF9BCF981C173EF6001B01FD /* DynseoMockupTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF9BCF991C173EF6001B01FD /* DynseoMockupTests.m */,
+				CF9BCF9B1C173EF6001B01FD /* Info.plist */,
+			);
+			path = DynseoMockupTests;
+			sourceTree = "<group>";
+		};
+		CF9BCFA31C173EF6001B01FD /* DynseoMockupUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF9BCFA41C173EF6001B01FD /* DynseoMockupUITests.m */,
+				CF9BCFA61C173EF6001B01FD /* Info.plist */,
+			);
+			path = DynseoMockupUITests;
+			sourceTree = "<group>";
+		};
+		CF9BCFB51C173F6D001B01FD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF9BCFB21C173F3E001B01FD /* HomeViewController.h */,
+				CF9BCFB31C173F3E001B01FD /* HomeViewController.m */,
+				CF9BCFBD1C1746F1001B01FD /* GameViewController.h */,
+				CF9BCFBE1C1746F1001B01FD /* GameViewController.m */,
+				CF4EAEDE1C186F28006FFCA1 /* DifficultyViewController.h */,
+				CF4EAEDF1C186F28006FFCA1 /* DifficultyViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CF9BCFC01C174759001B01FD /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				CF9BCFC11C174759001B01FD /* Localizable.strings */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		CF9BCFC51C17476A001B01FD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CF77987A1C18A54E007FE467 /* Constants.h */,
+				CF77987B1C18A54E007FE467 /* Constants.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF9BCF7B1C173EF5001B01FD /* DynseoMockup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF9BCFA91C173EF6001B01FD /* Build configuration list for PBXNativeTarget "DynseoMockup" */;
+			buildPhases = (
+				CF9BCF781C173EF5001B01FD /* Sources */,
+				CF9BCF791C173EF5001B01FD /* Frameworks */,
+				CF9BCF7A1C173EF5001B01FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynseoMockup;
+			productName = DynseoMockup;
+			productReference = CF9BCF7C1C173EF5001B01FD /* DynseoMockup.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF9BCF941C173EF6001B01FD /* DynseoMockupTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF9BCFAC1C173EF6001B01FD /* Build configuration list for PBXNativeTarget "DynseoMockupTests" */;
+			buildPhases = (
+				CF9BCF911C173EF6001B01FD /* Sources */,
+				CF9BCF921C173EF6001B01FD /* Frameworks */,
+				CF9BCF931C173EF6001B01FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF9BCF971C173EF6001B01FD /* PBXTargetDependency */,
+			);
+			name = DynseoMockupTests;
+			productName = DynseoMockupTests;
+			productReference = CF9BCF951C173EF6001B01FD /* DynseoMockupTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF9BCF9F1C173EF6001B01FD /* DynseoMockupUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF9BCFAF1C173EF6001B01FD /* Build configuration list for PBXNativeTarget "DynseoMockupUITests" */;
+			buildPhases = (
+				CF9BCF9C1C173EF6001B01FD /* Sources */,
+				CF9BCF9D1C173EF6001B01FD /* Frameworks */,
+				CF9BCF9E1C173EF6001B01FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF9BCFA21C173EF6001B01FD /* PBXTargetDependency */,
+			);
+			name = DynseoMockupUITests;
+			productName = DynseoMockupUITests;
+			productReference = CF9BCFA01C173EF6001B01FD /* DynseoMockupUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF9BCF741C173EF5001B01FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Marie-Odile Del Carlo";
+				TargetAttributes = {
+					CF9BCF7B1C173EF5001B01FD = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					CF9BCF941C173EF6001B01FD = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = CF9BCF7B1C173EF5001B01FD;
+					};
+					CF9BCF9F1C173EF6001B01FD = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = CF9BCF7B1C173EF5001B01FD;
+					};
+				};
+			};
+			buildConfigurationList = CF9BCF771C173EF5001B01FD /* Build configuration list for PBXProject "DynseoMockup" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				fr,
+			);
+			mainGroup = CF9BCF731C173EF5001B01FD;
+			productRefGroup = CF9BCF7D1C173EF5001B01FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF9BCF7B1C173EF5001B01FD /* DynseoMockup */,
+				CF9BCF941C173EF6001B01FD /* DynseoMockupTests */,
+				CF9BCF9F1C173EF6001B01FD /* DynseoMockupUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF9BCF7A1C173EF5001B01FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9BCFC41C174759001B01FD /* Localizable.strings in Resources */,
+				CF9BCF8F1C173EF6001B01FD /* LaunchScreen.storyboard in Resources */,
+				CF9BCF8C1C173EF6001B01FD /* Assets.xcassets in Resources */,
+				CF9BCF8A1C173EF5001B01FD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF9BCF931C173EF6001B01FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF9BCF9E1C173EF6001B01FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF9BCF781C173EF5001B01FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9BCFC81C17495C001B01FD /* Game.m in Sources */,
+				CF9BCFCE1C174F85001B01FD /* GameLogic.m in Sources */,
+				CF9BCFBF1C1746F1001B01FD /* GameViewController.m in Sources */,
+				CF9BCF841C173EF5001B01FD /* AppDelegate.m in Sources */,
+				CF9BCF811C173EF5001B01FD /* main.m in Sources */,
+				CF77987C1C18A54E007FE467 /* Constants.m in Sources */,
+				CF9BCFB41C173F3E001B01FD /* HomeViewController.m in Sources */,
+				CF9BCFCB1C174CE8001B01FD /* GameStep.m in Sources */,
+				CF9BCFD11C175727001B01FD /* GameStepArithmetic.m in Sources */,
+				CF4EAEE01C186F28006FFCA1 /* DifficultyViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF9BCF911C173EF6001B01FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9BCF9A1C173EF6001B01FD /* DynseoMockupTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF9BCF9C1C173EF6001B01FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF9BCFA51C173EF6001B01FD /* DynseoMockupUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF9BCF971C173EF6001B01FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF9BCF7B1C173EF5001B01FD /* DynseoMockup */;
+			targetProxy = CF9BCF961C173EF6001B01FD /* PBXContainerItemProxy */;
+		};
+		CF9BCFA21C173EF6001B01FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF9BCF7B1C173EF5001B01FD /* DynseoMockup */;
+			targetProxy = CF9BCFA11C173EF6001B01FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CF9BCF881C173EF5001B01FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF9BCF891C173EF5001B01FD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CF9BCF8D1C173EF6001B01FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF9BCF8E1C173EF6001B01FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CF9BCFC11C174759001B01FD /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF9BCFC21C174759001B01FD /* en */,
+				CF9BCFC31C174759001B01FD /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF9BCFA71C173EF6001B01FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CF9BCFA81C173EF6001B01FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF9BCFAA1C173EF6001B01FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DynseoMockup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marieodiledelcarlo.DynseoMockup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		CF9BCFAB1C173EF6001B01FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DynseoMockup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marieodiledelcarlo.DynseoMockup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		CF9BCFAD1C173EF6001B01FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DynseoMockupTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marieodiledelcarlo.DynseoMockupTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynseoMockup.app/DynseoMockup";
+			};
+			name = Debug;
+		};
+		CF9BCFAE1C173EF6001B01FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DynseoMockupTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marieodiledelcarlo.DynseoMockupTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynseoMockup.app/DynseoMockup";
+			};
+			name = Release;
+		};
+		CF9BCFB01C173EF6001B01FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DynseoMockupUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marieodiledelcarlo.DynseoMockupUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DynseoMockup;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CF9BCFB11C173EF6001B01FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DynseoMockupUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marieodiledelcarlo.DynseoMockupUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = DynseoMockup;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF9BCF771C173EF5001B01FD /* Build configuration list for PBXProject "DynseoMockup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF9BCFA71C173EF6001B01FD /* Debug */,
+				CF9BCFA81C173EF6001B01FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF9BCFA91C173EF6001B01FD /* Build configuration list for PBXNativeTarget "DynseoMockup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF9BCFAA1C173EF6001B01FD /* Debug */,
+				CF9BCFAB1C173EF6001B01FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF9BCFAC1C173EF6001B01FD /* Build configuration list for PBXNativeTarget "DynseoMockupTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF9BCFAD1C173EF6001B01FD /* Debug */,
+				CF9BCFAE1C173EF6001B01FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF9BCFAF1C173EF6001B01FD /* Build configuration list for PBXNativeTarget "DynseoMockupUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF9BCFB01C173EF6001B01FD /* Debug */,
+				CF9BCFB11C173EF6001B01FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF9BCF741C173EF5001B01FD /* Project object */;
+}
