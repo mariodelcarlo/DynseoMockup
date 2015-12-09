@@ -93,8 +93,11 @@
                                 <color key="textColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXs-go-Pvp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nXs-go-Pvp">
                                 <rect key="frame" x="10" y="10" width="75" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="g8K-kg-BHr"/>
+                                </constraints>
                                 <state key="normal" image="CancelButton"/>
                                 <connections>
                                     <action selector="quitGameTouchedUpInside:" destination="FZU-Rt-M5Q" eventType="touchUpInside" id="3v7-Pw-Jtu"/>
@@ -103,11 +106,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="nXs-go-Pvp" firstAttribute="leading" secondItem="YML-47-9Rw" secondAttribute="leading" constant="10" id="8PT-To-obZ"/>
+                            <constraint firstItem="nXs-go-Pvp" firstAttribute="top" secondItem="lCg-FG-N4g" secondAttribute="bottom" constant="10" id="9rw-60-p2O"/>
                             <constraint firstItem="UoH-Jh-4Dw" firstAttribute="centerX" secondItem="YML-47-9Rw" secondAttribute="centerX" id="I8x-Eq-pxB"/>
                             <constraint firstItem="UoH-Jh-4Dw" firstAttribute="centerY" secondItem="YML-47-9Rw" secondAttribute="centerY" multiplier="0.2" id="VLl-g4-4xZ"/>
-                            <constraint firstItem="nXs-go-Pvp" firstAttribute="width" secondItem="YML-47-9Rw" secondAttribute="width" multiplier="0.125" id="eTp-ET-ArR"/>
-                            <constraint firstItem="nXs-go-Pvp" firstAttribute="top" secondItem="lCg-FG-N4g" secondAttribute="bottom" constant="10" id="xlF-H1-4Qq"/>
+                            <constraint firstItem="nXs-go-Pvp" firstAttribute="leading" secondItem="YML-47-9Rw" secondAttribute="leadingMargin" constant="-10" id="l2n-Yk-0lF"/>
                         </constraints>
                     </view>
                     <connections>
