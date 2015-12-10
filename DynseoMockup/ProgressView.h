@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-
+//Custom progressView - just a rectangle filled with some color
 @interface ProgressView : UIView {
 	float minValue, maxValue;
 	float currentValue;

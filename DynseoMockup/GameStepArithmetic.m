@@ -10,15 +10,6 @@
 
 @implementation GameStepArithmetic
 
-#pragma mark init methods
-- (id)init{
-    self = [super init];
-    if (self) {
-        self.hasWon = NO;
-    }
-    return self;
-}
-
 #pragma mark utils methods
 -(NSString *)question{
     return [self questionForLeft:self.leftOperand right:self.rightOperand operator:self.gameOperator];
@@ -32,7 +23,7 @@
     return [NSMutableString stringWithFormat:@"%d %@ %d = ?",leftNumber, [self stringForGameOperator:operator],rightNumber];
 }
 
-
+//Returns the string value for an operator
 - (NSString*)stringForGameOperator:(GameOperator) operator{
     NSString *result = nil;
     
@@ -57,7 +48,7 @@
     return result;
 }
 
-
+//Returns the result for an operation
 -(NSInteger)resultForOperationWithLeft:(NSInteger)leftNumber right:(NSInteger)rightNumber operator:(GameOperator)operator{
     
     NSInteger result = -1;

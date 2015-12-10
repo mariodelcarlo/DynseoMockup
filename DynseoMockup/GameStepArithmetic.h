@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "GameStep.h"
 
-//Enum for difficulty of the game
+//Enum for the arithmetic operators
 typedef NS_ENUM(NSUInteger, GameOperator) {
     GameOperatorAddition = 0,
     GameOperatorSubtraction = 1,
@@ -32,11 +32,8 @@ typedef NS_ENUM(NSUInteger, GameOperator) {
 //Question
 @property(nonatomic, copy) NSString * question;
 
-
 //Right answer
 @property(nonatomic, retain) NSNumber * rightAnswer;
 
-//Has won the step
-@property(nonatomic, assign) BOOL hasWon;
 
 @end

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CF4EAEE01C186F28006FFCA1 /* DifficultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4EAEDF1C186F28006FFCA1 /* DifficultyViewController.m */; };
-		CF77987C1C18A54E007FE467 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CF77987B1C18A54E007FE467 /* Constants.m */; };
 		CF9BCF811C173EF5001B01FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCF801C173EF5001B01FD /* main.m */; };
 		CF9BCF841C173EF5001B01FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCF831C173EF5001B01FD /* AppDelegate.m */; };
 		CF9BCF8A1C173EF5001B01FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF9BCF881C173EF5001B01FD /* Main.storyboard */; };
@@ -47,8 +46,6 @@
 /* Begin PBXFileReference section */
 		CF4EAEDE1C186F28006FFCA1 /* DifficultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultyViewController.h; sourceTree = "<group>"; };
 		CF4EAEDF1C186F28006FFCA1 /* DifficultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultyViewController.m; sourceTree = "<group>"; };
-		CF77987A1C18A54E007FE467 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		CF77987B1C18A54E007FE467 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		CF9BCF7C1C173EF5001B01FD /* DynseoMockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynseoMockup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF9BCF801C173EF5001B01FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CF9BCF821C173EF5001B01FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -213,8 +210,6 @@
 		CF9BCFC51C17476A001B01FD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CF77987A1C18A54E007FE467 /* Constants.h */,
-				CF77987B1C18A54E007FE467 /* Constants.m */,
 				CFFA21ED1C1A319E00744A3D /* ProgressView.h */,
 				CFFA21EC1C1A319E00744A3D /* ProgressView.m */,
 			);
@@ -359,7 +354,6 @@
 				CF9BCF841C173EF5001B01FD /* AppDelegate.m in Sources */,
 				CF9BCF811C173EF5001B01FD /* main.m in Sources */,
 				CFFA21EE1C1A319E00744A3D /* ProgressView.m in Sources */,
-				CF77987C1C18A54E007FE467 /* Constants.m in Sources */,
 				CF9BCFB41C173F3E001B01FD /* HomeViewController.m in Sources */,
 				CF9BCFCB1C174CE8001B01FD /* GameStep.m in Sources */,
 				CF9BCFD11C175727001B01FD /* GameStepArithmetic.m in Sources */,

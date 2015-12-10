@@ -16,6 +16,7 @@
 -(void)updateGameStepTimeSpentWithSeconds:(int)seconds;
 @end
 
+//Handles the game logic
 @interface GameLogic : NSObject
 
 @property (nonatomic,retain) Game * currentGame;

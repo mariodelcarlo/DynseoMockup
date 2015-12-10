@@ -118,7 +118,6 @@
     [step1 setRightOperand:rightNumber];
     [step1 setGameOperator:operator];
     
-    
     return step1;
 }
 
@@ -134,7 +133,7 @@
     }
 }
 
-//Method to show the next step if exists or end game
+//Method to show the next step if exists or ends game
 -(void)showNextStepWithState:(GameStepState)theState{
     //Reset the timer
     self.stepElapsedTime = 0;

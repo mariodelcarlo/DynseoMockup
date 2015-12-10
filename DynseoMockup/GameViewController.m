@@ -48,7 +48,6 @@
     [super viewWillAppear:animated];
 }
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"EmbedKeyboardViewSegue"]) {
         self.keyboardViewController = (CustomKeyboardViewController *)segue.destinationViewController;
@@ -118,18 +117,6 @@
 }
 
 
--(void)updateQuestionBackgroundForState:(GameStepState)theState{
-    if(theState == GameStepFailed){
-        self.questionLabel.backgroundColor = [UIColor redColor];
-    }
-    else if(theState == GameStepWon){
-        self.questionLabel.backgroundColor = [UIColor greenColor];
-    }
-    else{
-        self.questionLabel.backgroundColor = [UIColor clearColor];
-    }
-}
-
 -(void)gameEndedWithScore:(NSInteger)theScore lastState:(GameStepState)theGameState{
     [self updateQuestionBackgroundForState:theGameState];
     NSString * message = [NSString stringWithFormat:@"%@ %ld / 10.",NSLocalizedString(@"gameEndedMessage", @"gameEndedMessage"),(long)theScore];
@@ -144,6 +131,18 @@
 
 
 #pragma mark private methods
+-(void)updateQuestionBackgroundForState:(GameStepState)theState{
+    if(theState == GameStepFailed){
+        self.questionLabel.backgroundColor = [UIColor redColor];
+    }
+    else if(theState == GameStepWon){
+        self.questionLabel.backgroundColor = [UIColor greenColor];
+    }
+    else{
+        self.questionLabel.backgroundColor = [UIColor clearColor];
+    }
+}
+
 -(NSString*)currentNumberResponse{
     NSString * currentQuestionText = self.questionLabel.text;
     NSRange equalRange = [currentQuestionText rangeOfString:@"="];
