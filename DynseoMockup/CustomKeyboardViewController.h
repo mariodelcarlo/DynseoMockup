@@ -12,6 +12,7 @@
 
 @interface CustomKeyboardViewController : UIViewController
 @property (nonatomic, assign) id <CustomKeyboardViewControllerDelegate> delegate;
+-(void)refreshKeyboardWithEnable:(BOOL)enable;
 @end
 
 @protocol CustomKeyboardViewControllerDelegate<NSObject>

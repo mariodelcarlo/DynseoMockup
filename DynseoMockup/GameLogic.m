@@ -125,7 +125,6 @@
 
 //Timer for a step
 -(void)stepTimerTick:(NSTimer *)timer {
-    NSLog(@"stepElapsedTime =%d",self.stepElapsedTime);
     self.stepElapsedTime = self.stepElapsedTime + 1;
     if(self.stepElapsedTime == self.currentGame.timeAllowedForEachStep){
         [self showNextStepWithState:GameStepFailed];
@@ -192,11 +191,15 @@
 
 
 -(void)validateAnswer:(NSNumber*)theAnswer{
-    GameStepArithmetic * step1 = self.currentGame.steps[self.currentGameStep];
-    NSLog(@"theAnswer=%d right=%d",[theAnswer intValue],[[step1 rightAnswer] intValue]);
-    if([[step1 rightAnswer] intValue] == [theAnswer intValue]){
-        self.currentGame.score = self.currentGame.score + 1;
-        [self showNextStepWithState:GameStepWon];
+    if(theAnswer != nil){
+        GameStepArithmetic * step1 = self.currentGame.steps[self.currentGameStep];
+        if([[step1 rightAnswer] intValue] == [theAnswer intValue]){
+            self.currentGame.score = self.currentGame.score + 1;
+            [self showNextStepWithState:GameStepWon];
+        }
+        else{
+            [self showNextStepWithState:GameStepFailed];
+        }
     }
     else{
         [self showNextStepWithState:GameStepFailed];
@@ -208,7 +211,6 @@
 -(void)startWithDifficulty:(GameDifficulty)theDifficulty{
     [self createGameForDifficulty:theDifficulty];
     if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(displayGameStepWithQuestion: state: animated:)]){
-        
         //Display first step of the game
         GameStepArithmetic * step1 = self.currentGame.steps[0];
         [self.gameDelegate displayGameStepWithQuestion:step1.question state:GameStepUnknown animated:NO];

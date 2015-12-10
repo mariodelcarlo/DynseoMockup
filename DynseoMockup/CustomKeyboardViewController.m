@@ -26,6 +26,7 @@
 }
 
 
+#pragma mark actions
 - (IBAction)keyboardNumberTouched:(id)sender {
     if(self.delegate != nil && [self.delegate respondsToSelector:@selector(customKeyboardViewController:didSelectNumber:)]){
         UIButton * touchedButton = (UIButton*)sender;
@@ -33,7 +34,6 @@
     }
 }
 
-#pragma mark actions
 - (IBAction)keyboardCancelTouched:(id)sender {
     if(self.delegate != nil && [self.delegate respondsToSelector:@selector(customKeyboardViewControllerDidSelectCancel:)]){
         [self.delegate customKeyboardViewControllerDidSelectCancel:self];
@@ -46,5 +46,13 @@
     }
 }
 
-
+#pragma mark utils
+-(void)refreshKeyboardWithEnable:(BOOL)enable{
+    for (UIView *subview in ((UIView *)self.view).subviews) {
+        if ([subview isKindOfClass:[UIButton class]]){
+            UIButton *button = (UIButton*)subview;
+            [button setUserInteractionEnabled:enable];
+        }
+    }
+}
 @end

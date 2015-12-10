@@ -75,9 +75,11 @@
         
         //fade out
         [UIView animateWithDuration:1.0f animations:^{
+            [self.keyboardViewController refreshKeyboardWithEnable:NO];
             [self.questionLabel setAlpha:0.0f];
             
         } completion:^(BOOL finished) {
+            //Disable keyboard
             [self updateQuestionBackgroundForState:GameStepUnknown];
             [self.questionLabel setText:theQuestion];
             //fade in
@@ -85,6 +87,7 @@
                 [self.questionLabel setAlpha:1.0f];
                 
             } completion:^(BOOL finished){
+                [self.keyboardViewController refreshKeyboardWithEnable:YES];
                 [self.gameLogic newStepIsDisplayed];
             }];
         }];
@@ -164,7 +167,14 @@
 
 
 - (void)customKeyboardViewControllerDidValidate:(CustomKeyboardViewController *)keyboardViewController{
-    NSNumber * currentResponse = [NSNumber numberWithInteger: [[self currentNumberResponse] integerValue]];
+    NSNumber * currentResponse;
+    NSString * currentResponseString = [self currentNumberResponse];
+    if([currentResponseString isEqualToString:@"?"]){
+        currentResponse = nil;
+    }
+    else{
+         currentResponse = [NSNumber numberWithInteger: [[self currentNumberResponse] integerValue]];
+    }
     [self.gameLogic validateAnswer:currentResponse];
 }
 @end
