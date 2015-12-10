@@ -32,7 +32,7 @@
 //Create an game with 10 aritmetic steps for a difficulty passed in param
 - (void)createGameForDifficulty:(GameDifficulty)theDifficulty{
     self.currentGame = [[Game alloc] init];
-    [self.currentGame setTimeAllowedForEachStep:3];
+    [self.currentGame setTimeAllowedForEachStep:60];
     self.currentGame.difficulty = theDifficulty;
     
     NSMutableArray * steps = [[NSMutableArray alloc] init];
@@ -191,6 +191,14 @@
         self.currentStepTimer = nil;
     }
     self.currentStepTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(stepTimerTick:) userInfo:nil repeats:YES];
+}
+
+-(BOOL)wonTheStepForAnswer:(NSNumber*)theAnswer{
+    GameStepArithmetic * step1 = self.currentGame.steps[self.currentGameStep];
+    if([step1 rightAnswer] == theAnswer){
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark public methods

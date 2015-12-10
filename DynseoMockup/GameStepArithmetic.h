@@ -32,11 +32,9 @@ typedef NS_ENUM(NSUInteger, GameOperator) {
 //Question
 @property(nonatomic, copy) NSString * question;
 
-//Proposed answered
-@property(nonatomic, retain) NSArray * proposedAnswer;
 
 //Right answer
-@property(nonatomic, retain) NSString * rightAnswer;
+@property(nonatomic, retain) NSNumber * rightAnswer;
 
 //Has won the step
 @property(nonatomic, assign) BOOL hasWon;

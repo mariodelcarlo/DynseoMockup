@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Game.h"
 #import "GameLogic.h"
+#import "CustomKeyboardViewController.h"
 
-@interface GameViewController : UIViewController<UIAlertViewDelegate, GameLogicDelegate>
+@interface GameViewController : UIViewController<UIAlertViewDelegate, GameLogicDelegate, CustomKeyboardViewControllerDelegate>
 @property (nonatomic,assign) GameDifficulty gameDifficulty;
 @end

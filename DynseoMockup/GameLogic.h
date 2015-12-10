@@ -25,5 +25,6 @@
 -(void)endGame;
 -(void)resumeGame;
 -(void)pauseGame;
+-(BOOL)wonTheStepForAnswer:(NSNumber*)theAnswer;
 
 @end

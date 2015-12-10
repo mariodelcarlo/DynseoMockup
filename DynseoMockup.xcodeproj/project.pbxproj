@@ -23,6 +23,7 @@
 		CF9BCFCB1C174CE8001B01FD /* GameStep.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFCA1C174CE8001B01FD /* GameStep.m */; };
 		CF9BCFCE1C174F85001B01FD /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFCD1C174F85001B01FD /* GameLogic.m */; };
 		CF9BCFD11C175727001B01FD /* GameStepArithmetic.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFD01C175727001B01FD /* GameStepArithmetic.m */; };
+		CFFA21EB1C19B8A700744A3D /* CustomKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFA21EA1C19B8A700744A3D /* CustomKeyboardViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		CF9BCFCD1C174F85001B01FD /* GameLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLogic.m; sourceTree = "<group>"; };
 		CF9BCFCF1C175727001B01FD /* GameStepArithmetic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStepArithmetic.h; sourceTree = "<group>"; };
 		CF9BCFD01C175727001B01FD /* GameStepArithmetic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStepArithmetic.m; sourceTree = "<group>"; };
+		CFFA21E91C19B8A700744A3D /* CustomKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomKeyboardViewController.h; sourceTree = "<group>"; };
+		CFFA21EA1C19B8A700744A3D /* CustomKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomKeyboardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 				CF9BCFBE1C1746F1001B01FD /* GameViewController.m */,
 				CF4EAEDE1C186F28006FFCA1 /* DifficultyViewController.h */,
 				CF4EAEDF1C186F28006FFCA1 /* DifficultyViewController.m */,
+				CFFA21E91C19B8A700744A3D /* CustomKeyboardViewController.h */,
+				CFFA21EA1C19B8A700744A3D /* CustomKeyboardViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				CF9BCFCB1C174CE8001B01FD /* GameStep.m in Sources */,
 				CF9BCFD11C175727001B01FD /* GameStepArithmetic.m in Sources */,
 				CF4EAEE01C186F28006FFCA1 /* DifficultyViewController.m in Sources */,
+				CFFA21EB1C19B8A700744A3D /* CustomKeyboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

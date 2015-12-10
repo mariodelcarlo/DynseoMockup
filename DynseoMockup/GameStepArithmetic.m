@@ -24,6 +24,10 @@
     return [self questionForLeft:self.leftOperand right:self.rightOperand operator:self.gameOperator];
 }
 
+-(NSNumber *)rightAnswer{
+    return [NSNumber numberWithInteger:[self resultForOperationWithLeft:self.leftOperand right:self.rightOperand operator:self.gameOperator]];
+}
+
 -(NSString *)questionForLeft:(NSInteger)leftNumber right:(NSInteger)rightNumber operator:(GameOperator)operator{
     return [NSMutableString stringWithFormat:@"%d %@ %d = ?",leftNumber, [self stringForGameOperator:operator],rightNumber];
 }

@@ -14,6 +14,7 @@
 @interface GameViewController ()
 @property (nonatomic, retain)GameLogic *gameLogic;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (nonatomic, strong) CustomKeyboardViewController *keyboardViewController;
 @end
 
 @implementation GameViewController
@@ -33,6 +34,14 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"EmbedKeyboardViewSegue"]) {
+        self.keyboardViewController = (CustomKeyboardViewController *)segue.destinationViewController;
+        self.keyboardViewController.delegate = self;
+    }
 }
 
 #pragma mark actions
@@ -76,6 +85,53 @@
     [alert setTag:ALERT_FINISHING_GAME];
 }
 
+#pragma mark private methods
+-(NSString*)currentNumberResponse{
+    NSString * currentQuestionText = self.questionLabel.text;
+    NSRange equalRange = [currentQuestionText rangeOfString:@"="];
+    return [currentQuestionText substringFromIndex:equalRange.location+2];
+}
+
+-(void)addNumberToTheResponseWithNumber:(NSNumber*)theNumber{
+    NSString * currentQuestionText = self.questionLabel.text;
+    NSRange equalRange = [currentQuestionText rangeOfString:@"="];
+    NSString * currentResponseText = [currentQuestionText substringFromIndex:equalRange.location];
+    NSString * newResponseText = [NSString stringWithFormat:@"%d",[theNumber intValue]];
+    
+    //If no answer yet, we replace ? by the number
+    if([currentResponseText isEqualToString:@"= ?"]){
+        NSString * questionText = [currentQuestionText substringToIndex:equalRange.location+1];
+        self.questionLabel.text = [NSString stringWithFormat:@"%@ %@",questionText,newResponseText];
+    }
+    else{
+        //we add the new number
+        self.questionLabel.text = [NSString stringWithFormat:@"%@%@",currentQuestionText,newResponseText];
+    }
+}
+
+#pragma mark CustomKeyboardViewControllerDelegate methods
+- (void)customKeyboardViewController:(CustomKeyboardViewController *)keyboardViewController didSelectNumber:(NSNumber *)keyboardNumber{
+    //We limit to 5 digits, no answer could overflows this
+    if([self currentNumberResponse].length < 5){
+        [self addNumberToTheResponseWithNumber:keyboardNumber];
+    }
+}
+
+- (void)customKeyboardViewControllerDidSelectCancel:(CustomKeyboardViewController *)keyboardViewController{
+    NSString * currentQuestionText = self.questionLabel.text;
+    NSRange equalRange = [currentQuestionText rangeOfString:@"="];
+    NSString * questionText = [currentQuestionText substringToIndex:equalRange.location+1];
+    self.questionLabel.text = [NSString stringWithFormat:@"%@ ?",questionText];
+}
 
 
+- (void)customKeyboardViewControllerDidValidate:(CustomKeyboardViewController *)keyboardViewController{
+    NSNumber * currentResponse = [NSNumber numberWithInteger: [[self currentNumberResponse] integerValue]];
+    if ([self.gameLogic wonTheStepForAnswer:currentResponse]) {
+        NSLog(@"YEAH!");
+    }
+    else{
+        NSLog(@"NOOOON!");
+    }
+}
 @end
