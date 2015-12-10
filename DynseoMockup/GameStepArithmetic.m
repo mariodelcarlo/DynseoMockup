@@ -40,7 +40,7 @@
             result = @"-";
             break;
         case GameOperatorMultiplication:
-            result = @"*";
+            result = @"X";
             break;
             
         case GameOperatorDivision:
