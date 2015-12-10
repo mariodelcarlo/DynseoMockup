@@ -108,7 +108,7 @@
         }
         else if(operator == GameOperatorDivision){
             rightNumber =  [self randomNumberBetween:2 maxNumber:9];
-            NSInteger numberTwo = [self randomNumberBetween:10 maxNumber:50];
+            NSInteger numberTwo = [self randomNumberBetween:10 maxNumber:20];
             leftNumber = rightNumber * numberTwo;
         }
     }
