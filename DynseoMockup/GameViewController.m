@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "GameStep.h"
 
 #define ALERT_CLOSING_GAME 123
 #define ALERT_FINISHING_GAME 456
@@ -22,6 +23,7 @@
 #pragma mark view life methods
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.questionLabel.text = @"";
     self.gameLogic = [[GameLogic alloc] init];
     self.gameLogic.gameDelegate = self;
     [self.gameLogic startWithDifficulty:self.gameDifficulty];
@@ -64,21 +66,57 @@
 }
 
 #pragma mark GameLogicDelegate methods
--(void)displayGameStepWithQuestion:(NSString*)theQuestion{
-    [CATransaction begin];
-    CATransition *animation = [CATransition animation];
-    animation.duration = 1;
-    animation.type = kCATransitionFade;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    [CATransaction setCompletionBlock:^{
+-(void)displayGameStepWithQuestion:(NSString*)theQuestion state:(GameStepState)theGameState animated:(BOOL)animated {
+    
+    [self updateQuestionBackgroundForState:theGameState];
+    
+    if(animated){
+        [self.questionLabel setAlpha:1.0f];
+        
+        //fade out
+        [UIView animateWithDuration:1.0f animations:^{
+            [self.questionLabel setAlpha:0.0f];
+            
+        } completion:^(BOOL finished) {
+            [self updateQuestionBackgroundForState:GameStepUnknown];
+            [self.questionLabel setText:theQuestion];
+            //fade in
+            [UIView animateWithDuration:1.0f animations:^{
+                [self.questionLabel setAlpha:1.0f];
+                
+            } completion:^(BOOL finished){
+                [self.gameLogic newStepIsDisplayed];
+            }];
+        }];
+    }
+    else{
+        self.questionLabel.backgroundColor = [UIColor clearColor];
+        if(theGameState == GameStepFailed){
+            self.questionLabel.backgroundColor = [UIColor redColor];
+        }
+        else if(theGameState == GameStepWon){
+            self.questionLabel.backgroundColor = [UIColor greenColor];
+        }
+        [self.questionLabel setText:theQuestion];
         [self.gameLogic newStepIsDisplayed];
-    }];
-    [self.questionLabel.layer addAnimation:animation forKey:@"changeTextTransition"];
-    [self.questionLabel setText:theQuestion];
-    [CATransaction commit];
+    }
 }
 
--(void)gameEndedWithScore:(NSInteger)theScore{
+
+-(void)updateQuestionBackgroundForState:(GameStepState)theState{
+    if(theState == GameStepFailed){
+        self.questionLabel.backgroundColor = [UIColor redColor];
+    }
+    else if(theState == GameStepWon){
+        self.questionLabel.backgroundColor = [UIColor greenColor];
+    }
+    else{
+        self.questionLabel.backgroundColor = [UIColor clearColor];
+    }
+}
+
+-(void)gameEndedWithScore:(NSInteger)theScore lastState:(GameStepState)theGameState{
+    [self updateQuestionBackgroundForState:theGameState];
     NSString * message = [NSString stringWithFormat:@"%@ %ld / 10.",NSLocalizedString(@"gameEndedMessage", @"gameEndedMessage"),(long)theScore];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"gameEndedTitle", @"gameEndedTitle") message:message delegate:self cancelButtonTitle:NSLocalizedString(@"ok", @"ok") otherButtonTitles:nil];
     [alert show];
@@ -127,11 +165,6 @@
 
 - (void)customKeyboardViewControllerDidValidate:(CustomKeyboardViewController *)keyboardViewController{
     NSNumber * currentResponse = [NSNumber numberWithInteger: [[self currentNumberResponse] integerValue]];
-    if ([self.gameLogic wonTheStepForAnswer:currentResponse]) {
-        NSLog(@"YEAH!");
-    }
-    else{
-        NSLog(@"NOOOON!");
-    }
+    [self.gameLogic validateAnswer:currentResponse];
 }
 @end

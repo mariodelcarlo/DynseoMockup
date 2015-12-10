@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Game.h"
+#import "GameStep.h"
 
 @protocol GameLogicDelegate <NSObject>
--(void)displayGameStepWithQuestion:(NSString*)theQuestion;
--(void)gameEndedWithScore:(NSInteger)theScore;
+-(void)displayGameStepWithQuestion:(NSString*)theQuestion state:(GameStepState)theGameState animated:(BOOL)animated;
+-(void)gameEndedWithScore:(NSInteger)theScore lastState:(GameStepState)theGameState;
 @end
 
 @interface GameLogic : NSObject
@@ -25,6 +26,5 @@
 -(void)endGame;
 -(void)resumeGame;
 -(void)pauseGame;
--(BOOL)wonTheStepForAnswer:(NSNumber*)theAnswer;
-
+-(void)validateAnswer:(NSNumber*)theAnswer;
 @end

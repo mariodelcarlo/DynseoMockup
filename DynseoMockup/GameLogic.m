@@ -32,7 +32,7 @@
 //Create an game with 10 aritmetic steps for a difficulty passed in param
 - (void)createGameForDifficulty:(GameDifficulty)theDifficulty{
     self.currentGame = [[Game alloc] init];
-    [self.currentGame setTimeAllowedForEachStep:60];
+    [self.currentGame setTimeAllowedForEachStep:10];
     self.currentGame.difficulty = theDifficulty;
     
     NSMutableArray * steps = [[NSMutableArray alloc] init];
@@ -128,12 +128,12 @@
     NSLog(@"stepElapsedTime =%d",self.stepElapsedTime);
     self.stepElapsedTime = self.stepElapsedTime + 1;
     if(self.stepElapsedTime == self.currentGame.timeAllowedForEachStep){
-        [self showNextStep];
+        [self showNextStepWithState:GameStepFailed];
     }
 }
 
 //Method to show the next step if exists or end game
--(void)showNextStep{
+-(void)showNextStepWithState:(GameStepState)theState{
     //Reset the timer
     self.stepElapsedTime = 0;
     [self.currentStepTimer invalidate];
@@ -144,17 +144,17 @@
         //Change the step
         self.currentGameStep = self.currentGameStep + 1;
         
-        if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(displayGameStepWithQuestion:)]){
+        if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(displayGameStepWithQuestion: state: animated:)]){
             
             //Display next step of the game
             GameStepArithmetic * step1 = self.currentGame.steps[self.currentGameStep];
-            [self.gameDelegate displayGameStepWithQuestion:step1.question];
+            [self.gameDelegate displayGameStepWithQuestion:step1.question state:theState animated:YES];
         }
     }
     else{
         //The game is finished
-        if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(gameEndedWithScore:)]){
-            [self.gameDelegate gameEndedWithScore:self.currentGame.score];
+        if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(gameEndedWithScore: lastState:)]){
+            [self.gameDelegate gameEndedWithScore:self.currentGame.score lastState:theState];
         }
     }
 }
@@ -171,21 +171,18 @@
 
 
 -(void)endGame{
-    NSLog(@"EndGame");
     [self.currentStepTimer invalidate];
     self.currentStepTimer = nil;
     self.stepElapsedTime = 0;
 }
 
 -(void)pauseGame{
-    NSLog(@"PauseGame");
     [self.currentStepTimer invalidate];
     self.currentStepTimer = nil;
 }
 
 
 -(void)resumeGame{
-    NSLog(@"resumeGame");
     if(self.currentStepTimer !=nil){
         [self.currentStepTimer invalidate];
         self.currentStepTimer = nil;
@@ -193,23 +190,28 @@
     self.currentStepTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(stepTimerTick:) userInfo:nil repeats:YES];
 }
 
--(BOOL)wonTheStepForAnswer:(NSNumber*)theAnswer{
+
+-(void)validateAnswer:(NSNumber*)theAnswer{
     GameStepArithmetic * step1 = self.currentGame.steps[self.currentGameStep];
-    if([step1 rightAnswer] == theAnswer){
-        return YES;
+    NSLog(@"theAnswer=%d right=%d",[theAnswer intValue],[[step1 rightAnswer] intValue]);
+    if([[step1 rightAnswer] intValue] == [theAnswer intValue]){
+        self.currentGame.score = self.currentGame.score + 1;
+        [self showNextStepWithState:GameStepWon];
     }
-    return NO;
+    else{
+        [self showNextStepWithState:GameStepFailed];
+    }
 }
 
 #pragma mark public methods
 //Start a game: create a game and display the first step
 -(void)startWithDifficulty:(GameDifficulty)theDifficulty{
     [self createGameForDifficulty:theDifficulty];
-    if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(displayGameStepWithQuestion:)]){
+    if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(displayGameStepWithQuestion: state: animated:)]){
         
         //Display first step of the game
         GameStepArithmetic * step1 = self.currentGame.steps[0];
-        [self.gameDelegate displayGameStepWithQuestion:step1.question];
+        [self.gameDelegate displayGameStepWithQuestion:step1.question state:GameStepUnknown animated:NO];
     }
 }
 @end

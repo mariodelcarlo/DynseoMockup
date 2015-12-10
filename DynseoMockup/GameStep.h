@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+//Enum for difficulty of the game
+typedef NS_ENUM(NSUInteger, GameStepState) {
+    GameStepWon = 0,
+    GameStepFailed = 1,
+    GameStepUnknown = 2
+};
+
 //Generic game step if we have multiple types of game steps
 @interface GameStep : NSObject
 @end
