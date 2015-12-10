@@ -13,6 +13,7 @@
 @protocol GameLogicDelegate <NSObject>
 -(void)displayGameStepWithQuestion:(NSString*)theQuestion state:(GameStepState)theGameState animated:(BOOL)animated;
 -(void)gameEndedWithScore:(NSInteger)theScore lastState:(GameStepState)theGameState;
+-(void)updateGameStepTimeSpentWithSeconds:(int)seconds;
 @end
 
 @interface GameLogic : NSObject

@@ -109,22 +109,31 @@
                                     <segue destination="NKe-cE-BCl" kind="embed" identifier="EmbedKeyboardViewSegue" id="X2T-SY-kXT"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQt-Sk-2qg" customClass="ProgressView">
+                                <rect key="frame" x="0.0" y="760" width="1024" height="8"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Bfg-b0-Qem" firstAttribute="height" secondItem="YML-47-9Rw" secondAttribute="height" multiplier="0.5" id="75M-Pr-Ybh"/>
+                            <constraint firstItem="PQt-Sk-2qg" firstAttribute="leading" secondItem="YML-47-9Rw" secondAttribute="leading" id="D4c-b0-Pkt"/>
                             <constraint firstItem="Bfg-b0-Qem" firstAttribute="centerX" secondItem="YML-47-9Rw" secondAttribute="centerX" id="EeW-Bz-UQU"/>
                             <constraint firstItem="UoH-Jh-4Dw" firstAttribute="centerX" secondItem="YML-47-9Rw" secondAttribute="centerX" id="I8x-Eq-pxB"/>
+                            <constraint firstAttribute="trailing" secondItem="PQt-Sk-2qg" secondAttribute="trailing" id="KqG-Hn-rxY"/>
                             <constraint firstItem="Bfg-b0-Qem" firstAttribute="width" secondItem="YML-47-9Rw" secondAttribute="width" multiplier="0.33" id="MDY-P9-ywB"/>
                             <constraint firstItem="UoH-Jh-4Dw" firstAttribute="centerY" secondItem="YML-47-9Rw" secondAttribute="centerY" multiplier="0.3" id="VLl-g4-4xZ"/>
                             <constraint firstItem="nXs-go-Pvp" firstAttribute="top" secondItem="lCg-FG-N4g" secondAttribute="bottom" constant="10" id="cem-2X-ax1"/>
+                            <constraint firstItem="PQt-Sk-2qg" firstAttribute="height" secondItem="YML-47-9Rw" secondAttribute="height" multiplier="0.01" id="i8J-QQ-1Vz"/>
                             <constraint firstItem="Bfg-b0-Qem" firstAttribute="centerY" secondItem="YML-47-9Rw" secondAttribute="centerY" multiplier="1.2" id="pwc-K0-qmg"/>
+                            <constraint firstItem="KjI-4i-ULu" firstAttribute="top" secondItem="PQt-Sk-2qg" secondAttribute="bottom" id="rTw-4L-QGV"/>
                             <constraint firstItem="nXs-go-Pvp" firstAttribute="leading" secondItem="YML-47-9Rw" secondAttribute="leadingMargin" constant="-10" id="yFk-QG-WL9"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1024" height="768"/>
                     <connections>
+                        <outlet property="progressView" destination="PQt-Sk-2qg" id="gfH-aB-OQW"/>
                         <outlet property="questionLabel" destination="UoH-Jh-4Dw" id="C0Z-d6-Ecu"/>
                     </connections>
                 </viewController>

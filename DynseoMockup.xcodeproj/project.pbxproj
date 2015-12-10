@@ -24,6 +24,7 @@
 		CF9BCFCE1C174F85001B01FD /* GameLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFCD1C174F85001B01FD /* GameLogic.m */; };
 		CF9BCFD11C175727001B01FD /* GameStepArithmetic.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCFD01C175727001B01FD /* GameStepArithmetic.m */; };
 		CFFA21EB1C19B8A700744A3D /* CustomKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFA21EA1C19B8A700744A3D /* CustomKeyboardViewController.m */; };
+		CFFA21EE1C1A319E00744A3D /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFA21EC1C1A319E00744A3D /* ProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		CF9BCFD01C175727001B01FD /* GameStepArithmetic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameStepArithmetic.m; sourceTree = "<group>"; };
 		CFFA21E91C19B8A700744A3D /* CustomKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomKeyboardViewController.h; sourceTree = "<group>"; };
 		CFFA21EA1C19B8A700744A3D /* CustomKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomKeyboardViewController.m; sourceTree = "<group>"; };
+		CFFA21EC1C1A319E00744A3D /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		CFFA21ED1C1A319E00744A3D /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 			children = (
 				CF77987A1C18A54E007FE467 /* Constants.h */,
 				CF77987B1C18A54E007FE467 /* Constants.m */,
+				CFFA21ED1C1A319E00744A3D /* ProgressView.h */,
+				CFFA21EC1C1A319E00744A3D /* ProgressView.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -353,6 +358,7 @@
 				CF9BCFBF1C1746F1001B01FD /* GameViewController.m in Sources */,
 				CF9BCF841C173EF5001B01FD /* AppDelegate.m in Sources */,
 				CF9BCF811C173EF5001B01FD /* main.m in Sources */,
+				CFFA21EE1C1A319E00744A3D /* ProgressView.m in Sources */,
 				CF77987C1C18A54E007FE467 /* Constants.m in Sources */,
 				CF9BCFB41C173F3E001B01FD /* HomeViewController.m in Sources */,
 				CF9BCFCB1C174CE8001B01FD /* GameStep.m in Sources */,

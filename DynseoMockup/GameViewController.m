@@ -8,6 +8,7 @@
 
 #import "GameViewController.h"
 #import "GameStep.h"
+#import "ProgressView.h"
 
 #define ALERT_CLOSING_GAME 123
 #define ALERT_FINISHING_GAME 456
@@ -16,6 +17,8 @@
 @property (nonatomic, retain)GameLogic *gameLogic;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (nonatomic, strong) CustomKeyboardViewController *keyboardViewController;
+@property (weak, nonatomic) IBOutlet ProgressView *progressView;
+
 @end
 
 @implementation GameViewController
@@ -27,6 +30,13 @@
     self.gameLogic = [[GameLogic alloc] init];
     self.gameLogic.gameDelegate = self;
     [self.gameLogic startWithDifficulty:self.gameDifficulty];
+    
+    //Set up progress view
+    [self.progressView setMinValue:0];
+    [self.progressView setMaxValue:self.gameLogic.currentGame.timeAllowedForEachStep];
+    [self.progressView setCurrentValue:0];
+    [self.progressView setProgressRemainingColor:[UIColor colorWithRed:104/255.f green:188/255.f blue:216/255.f alpha:1]];
+    [self.progressView setProgressColor:[UIColor colorWithRed:116/255.f green:94/255.f blue:139/255.f alpha:1]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +55,7 @@
         self.keyboardViewController.delegate = self;
     }
 }
+
 
 #pragma mark actions
 - (IBAction)quitGameTouchedUpInside:(id)sender {
@@ -68,6 +79,7 @@
 #pragma mark GameLogicDelegate methods
 -(void)displayGameStepWithQuestion:(NSString*)theQuestion state:(GameStepState)theGameState animated:(BOOL)animated {
     
+    [self.progressView setCurrentValue:0];
     [self updateQuestionBackgroundForState:theGameState];
     
     if(animated){
@@ -125,6 +137,11 @@
     [alert show];
     [alert setTag:ALERT_FINISHING_GAME];
 }
+
+-(void)updateGameStepTimeSpentWithSeconds:(int)seconds{
+    [self.progressView setCurrentValue:seconds];
+}
+
 
 #pragma mark private methods
 -(NSString*)currentNumberResponse{
