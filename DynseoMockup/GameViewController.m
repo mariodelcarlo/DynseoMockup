@@ -71,7 +71,6 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"exitGameTitle", @"exitGameTitle") message:NSLocalizedString(@"exitGameMessage", @"exitGameMessage") delegate:self cancelButtonTitle:NSLocalizedString(@"no", @"no") otherButtonTitles:NSLocalizedString(@"yes", @"yes"), nil];
     [alert setTag:ALERT_CLOSING_GAME];
     [alert show];
-    [self.gameLogic pauseGame];
 }
 
 #pragma mark UIAlertViewDelegate methods
@@ -79,9 +78,6 @@
     if((buttonIndex == 1 && alertView.tag == ALERT_CLOSING_GAME) || alertView.tag == ALERT_FINISHING_GAME){
         [self.gameLogic endGame];
         [[self navigationController] popToRootViewControllerAnimated:YES];
-    }
-    else if(buttonIndex == 0 && alertView.tag == ALERT_CLOSING_GAME){
-        [self.gameLogic resumeGame];
     }
 }
 
