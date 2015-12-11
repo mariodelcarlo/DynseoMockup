@@ -15,6 +15,11 @@
 @implementation CustomKeyboardViewController
 
 #pragma mark view life methods
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

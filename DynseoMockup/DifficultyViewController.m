@@ -32,6 +32,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     self.titleLabel.text = NSLocalizedString(@"difficultyTitle", @"difficultyTitle");
     [self.easyButton setTitle:NSLocalizedString(@"easyButtonTitle", @"easyButtonTitle") forState:UIControlStateNormal];
     [self.normalButton setTitle:NSLocalizedString(@"normalButtonTitle", @"normalButtonTitle") forState:UIControlStateNormal];

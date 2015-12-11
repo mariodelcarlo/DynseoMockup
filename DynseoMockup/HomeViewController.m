@@ -26,6 +26,7 @@
     [super viewWillAppear:animated];
     //Hide navigation bar
     [self.navigationController setNavigationBarHidden:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     //Set texts
     [self.welcomeLabel setText:NSLocalizedString(@"welcomeLabelTitle", @"")];
     [self.playButton setTitle:NSLocalizedString(@"playButtonTitle", @"") forState:UIControlStateNormal];
@@ -36,4 +37,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+
+}
 @end

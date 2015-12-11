@@ -60,8 +60,10 @@
         <!--Navigation Controller-->
         <scene sceneID="1I9-bs-ZYB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iiJ-Lz-dYf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="iiJ-Lz-dYf" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nvO-fF-wz3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -84,11 +86,11 @@
                         <viewControllerLayoutGuide type="bottom" id="KjI-4i-ULu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YML-47-9Rw">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoH-Jh-4Dw">
-                                <rect key="frame" x="402" y="63" width="221" height="105"/>
+                                <rect key="frame" x="190" y="38" width="221" height="105"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="90"/>
                                 <color key="textColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -104,13 +106,13 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfg-b0-Qem">
-                                <rect key="frame" x="343" y="269" width="338" height="384"/>
+                                <rect key="frame" x="201" y="210" width="198" height="300"/>
                                 <connections>
                                     <segue destination="NKe-cE-BCl" kind="embed" identifier="EmbedKeyboardViewSegue" id="X2T-SY-kXT"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQt-Sk-2qg" customClass="ProgressView">
-                                <rect key="frame" x="0.0" y="760" width="1024" height="8"/>
+                                <rect key="frame" x="0.0" y="588" width="600" height="12"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -124,14 +126,14 @@
                             <constraint firstItem="Bfg-b0-Qem" firstAttribute="width" secondItem="YML-47-9Rw" secondAttribute="width" multiplier="0.33" id="MDY-P9-ywB"/>
                             <constraint firstItem="UoH-Jh-4Dw" firstAttribute="centerY" secondItem="YML-47-9Rw" secondAttribute="centerY" multiplier="0.3" id="VLl-g4-4xZ"/>
                             <constraint firstItem="nXs-go-Pvp" firstAttribute="top" secondItem="lCg-FG-N4g" secondAttribute="bottom" constant="10" id="cem-2X-ax1"/>
-                            <constraint firstItem="PQt-Sk-2qg" firstAttribute="height" secondItem="YML-47-9Rw" secondAttribute="height" multiplier="0.01" id="i8J-QQ-1Vz"/>
+                            <constraint firstItem="PQt-Sk-2qg" firstAttribute="height" secondItem="YML-47-9Rw" secondAttribute="height" multiplier="0.02" id="i8J-QQ-1Vz"/>
                             <constraint firstItem="Bfg-b0-Qem" firstAttribute="centerY" secondItem="YML-47-9Rw" secondAttribute="centerY" multiplier="1.2" id="pwc-K0-qmg"/>
                             <constraint firstItem="KjI-4i-ULu" firstAttribute="top" secondItem="PQt-Sk-2qg" secondAttribute="bottom" id="rTw-4L-QGV"/>
                             <constraint firstItem="nXs-go-Pvp" firstAttribute="leading" secondItem="YML-47-9Rw" secondAttribute="leadingMargin" constant="-10" id="yFk-QG-WL9"/>
                         </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="1024" height="768"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="progressView" destination="PQt-Sk-2qg" id="gfH-aB-OQW"/>
                         <outlet property="questionLabel" destination="UoH-Jh-4Dw" id="C0Z-d6-Ecu"/>
@@ -139,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vrb-1t-a6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1354" y="-353"/>
+            <point key="canvasLocation" x="1210" y="23"/>
         </scene>
         <!--Difficulty View Controller-->
         <scene sceneID="p4o-0H-AOT">
@@ -236,6 +238,8 @@
                             <constraint firstItem="5mr-Hn-tQN" firstAttribute="top" secondItem="PR3-c6-uVY" secondAttribute="bottom" id="pkY-O5-f7T"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="easyButton" destination="zXG-Kg-RE4" id="ebK-cg-Rbi"/>
                         <outlet property="hardButton" destination="LgS-rx-BNP" id="WbX-FP-fOh"/>
@@ -256,11 +260,11 @@
                         <viewControllerLayoutGuide type="bottom" id="sda-Rj-dEp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RvW-1p-ioB">
-                        <rect key="frame" x="0.0" y="0.0" width="338" height="384"/>
+                        <rect key="frame" x="0.0" y="0.0" width="198" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="412-OG-a4P">
-                                <rect key="frame" x="0.0" y="0.0" width="95" height="77"/>
+                                <rect key="frame" x="0.0" y="0.0" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="1">
@@ -271,7 +275,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EY5-0k-51H">
-                                <rect key="frame" x="121" y="0.0" width="95" height="77"/>
+                                <rect key="frame" x="71" y="0.0" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="2">
@@ -282,7 +286,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2W-CY-rbW" userLabel="3">
-                                <rect key="frame" x="243" y="0.0" width="95" height="77"/>
+                                <rect key="frame" x="142" y="0.0" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="3">
@@ -293,11 +297,11 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLg-jO-27t" userLabel="Spacer1">
-                                <rect key="frame" x="0.0" y="77" width="338" height="25"/>
+                                <rect key="frame" x="0.0" y="60" width="198" height="20"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mog-t2-A3Z" userLabel="4">
-                                <rect key="frame" x="0.0" y="102" width="95" height="77"/>
+                                <rect key="frame" x="0.0" y="80" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="4">
@@ -308,7 +312,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AJ-4q-nKn">
-                                <rect key="frame" x="121" y="102" width="95" height="77"/>
+                                <rect key="frame" x="71" y="80" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="5">
@@ -319,7 +323,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRd-J7-0ta" userLabel="6">
-                                <rect key="frame" x="243" y="102" width="95" height="77"/>
+                                <rect key="frame" x="142" y="80" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="6">
@@ -330,11 +334,11 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWC-1n-NZm" userLabel="Spacer2">
-                                <rect key="frame" x="0.0" y="179" width="338" height="25"/>
+                                <rect key="frame" x="0.0" y="140" width="198" height="20"/>
                                 <color key="backgroundColor" red="0.40784313729999999" green="0.73725490199999999" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-Rl-WlT" userLabel="7">
-                                <rect key="frame" x="0.0" y="204" width="95" height="77"/>
+                                <rect key="frame" x="0.0" y="160" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="7">
@@ -345,7 +349,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8T-CM-HJT" userLabel="8">
-                                <rect key="frame" x="122" y="204" width="95" height="77"/>
+                                <rect key="frame" x="71" y="160" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="8">
@@ -356,7 +360,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9J-xO-FxY" userLabel="9">
-                                <rect key="frame" x="243" y="204" width="95" height="77"/>
+                                <rect key="frame" x="142" y="160" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="9">
@@ -367,7 +371,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBn-wI-JVb">
-                                <rect key="frame" x="0.0" y="307" width="95" height="77"/>
+                                <rect key="frame" x="0.0" y="240" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="0">
@@ -378,7 +382,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjV-eR-z4O" userLabel="Valider">
-                                <rect key="frame" x="243" y="307" width="95" height="77"/>
+                                <rect key="frame" x="142" y="240" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="V">
@@ -389,7 +393,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z87-Vo-R4e" userLabel="Annuler">
-                                <rect key="frame" x="121" y="307" width="95" height="77"/>
+                                <rect key="frame" x="71" y="240" width="56" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="60"/>
                                 <state key="normal" title="X">
@@ -470,10 +474,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3P-3G-t30" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="247" y="761"/>
+            <point key="canvasLocation" x="1271" y="677"/>
         </scene>
     </scenes>
     <resources>
