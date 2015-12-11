@@ -188,6 +188,7 @@
 }
 
 //Handles the pause of a game
+//Miss pausing all animations -> if the game is paused, we must not see an animation like the change of a step, needs improvement.
 -(void)pauseGame{
     [self.currentStepTimer invalidate];
     self.currentStepTimer = nil;
