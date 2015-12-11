@@ -51,7 +51,7 @@
 //Generate a random number between 2 bounds, bounds are included
 - (NSInteger)randomNumberBetween:(NSInteger)min maxNumber:(NSInteger)max{
     //arc4random_uniform returns value between 0 and the bounds set in parameter
-    return min + arc4random_uniform(max - min + 1);
+    return min + arc4random_uniform((int)max - (int)min + 1);
 }
 
 
@@ -128,13 +128,18 @@
 
 //Timer for a step
 -(void)stepTimerTick:(NSTimer *)timer {
-    self.stepElapsedTime = self.stepElapsedTime + 1;
     if(self.gameDelegate != nil && [self.gameDelegate respondsToSelector:@selector(updateGameStepTimeSpentWithSeconds:)]){
         [self.gameDelegate updateGameStepTimeSpentWithSeconds:self.stepElapsedTime];
     }
     if(self.stepElapsedTime == self.currentGame.timeAllowedForEachStep){
-        [self showNextStepWithState:GameStepFailed];
+        //Add delay to show the progress bar filled to 100%
+        [self performSelector:@selector(showGameStepFailedAfterTimerExpired) withObject:nil afterDelay:0.1];
     }
+    self.stepElapsedTime = self.stepElapsedTime + 1;
+}
+
+-(void)showGameStepFailedAfterTimerExpired{
+    [self showNextStepWithState:GameStepFailed];
 }
 
 //Method to show the next step if exists or ends game
@@ -172,6 +177,7 @@
         self.currentStepTimer = nil;
     }
     self.currentStepTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(stepTimerTick:) userInfo:nil repeats:YES];
+    [self.currentStepTimer fire];
 }
 
 //Handles the end of a game
@@ -194,6 +200,7 @@
         self.currentStepTimer = nil;
     }
     self.currentStepTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(stepTimerTick:) userInfo:nil repeats:YES];
+    [self.currentStepTimer fire];
 }
 
 //Checks if an answer is right or not, and call the right method depending if the game step

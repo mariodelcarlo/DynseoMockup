@@ -22,7 +22,7 @@
 }
 
 -(NSString *)questionForLeft:(NSInteger)leftNumber right:(NSInteger)rightNumber operator:(GameOperator)operator{
-    return [NSMutableString stringWithFormat:@"%d %@ %d = ?",leftNumber, [self stringForGameOperator:operator],rightNumber];
+    return [NSMutableString stringWithFormat:@"%d %@ %d = ?", (int)leftNumber , [self stringForGameOperator:operator],(int)rightNumber];
 }
 
 //Returns the string value for an operator
