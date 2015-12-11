@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+//The controller displayig the choice of difficulty
 @interface DifficultyViewController : UIViewController
 
 @end

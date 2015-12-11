@@ -17,7 +17,8 @@ typedef NS_ENUM(NSUInteger, GameOperator) {
     GameOperatorDivision = 3
 };
 
-
+//A game step that displays an arithmetic problem
+//We support only an operation with 2 operands for the moment
 @interface GameStepArithmetic : NSObject
 
 //Left operand
@@ -29,7 +30,7 @@ typedef NS_ENUM(NSUInteger, GameOperator) {
 //Operator (operator named reserved)
 @property(nonatomic, assign)GameOperator gameOperator;
 
-//Question
+//Question asked
 @property(nonatomic, copy) NSString * question;
 
 //Right answer

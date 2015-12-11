@@ -11,10 +11,12 @@
 @implementation GameStepArithmetic
 
 #pragma mark utils methods
+//The question asked
 -(NSString *)question{
     return [self questionForLeft:self.leftOperand right:self.rightOperand operator:self.gameOperator];
 }
 
+//The right answer for a question
 -(NSNumber *)rightAnswer{
     return [NSNumber numberWithInteger:[self resultForOperationWithLeft:self.leftOperand right:self.rightOperand operator:self.gameOperator]];
 }

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-//Enum for difficulty of the game
+//Enum for the state of the game
 typedef NS_ENUM(NSUInteger, GameStepState) {
     GameStepWon = 0,
     GameStepFailed = 1,

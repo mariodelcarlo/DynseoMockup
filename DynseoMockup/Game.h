@@ -17,7 +17,6 @@ typedef NS_ENUM(NSUInteger, GameDifficulty) {
     GameDifficultyHard = 2,
 };
 
-
 //The difficulty
 @property (nonatomic) GameDifficulty difficulty;
 
@@ -30,13 +29,5 @@ typedef NS_ENUM(NSUInteger, GameDifficulty) {
 //Time allowed to answer the step in seconds
 @property(nonatomic, assign) NSInteger timeAllowedForEachStep;
 
-//Path of the sound in case of success
-@property(nonatomic, copy) NSString * gameStepSucceedSoundPath;
-
-//Path of the sound in case of failure
-@property(nonatomic, copy) NSString * gameStepFailedSoundPath;
-
-//The player name
-@property(nonatomic, copy) NSString * playerName;
 
 @end

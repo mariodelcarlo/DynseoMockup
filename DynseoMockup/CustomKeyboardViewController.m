@@ -52,6 +52,7 @@
 }
 
 #pragma mark utils
+//Enable or disable all the keyboard buttons depending the parameter
 -(void)refreshKeyboardWithEnable:(BOOL)enable{
     for (UIView *subview in ((UIView *)self.view).subviews) {
         if ([subview isKindOfClass:[UIButton class]]){

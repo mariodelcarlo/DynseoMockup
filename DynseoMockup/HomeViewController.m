@@ -37,8 +37,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)prefersStatusBarHidden{
-    return YES;
-
-}
 @end

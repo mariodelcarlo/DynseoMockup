@@ -11,6 +11,8 @@
 #import "GameLogic.h"
 #import "CustomKeyboardViewController.h"
 
+//The controler displaying the game: arithmetic question, keyboard, timer
 @interface GameViewController : UIViewController<UIAlertViewDelegate, GameLogicDelegate, CustomKeyboardViewControllerDelegate>
+//The game difficulty choosen for the game
 @property (nonatomic,assign) GameDifficulty gameDifficulty;
 @end

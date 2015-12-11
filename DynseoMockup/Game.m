@@ -14,7 +14,6 @@
 - (id)init{
     self = [super init];
     if (self) {
-        self.playerName = NSLocalizedString(@"playerNameDefault", @"");
         self.difficulty = GameDifficultyEasy;
         self.score = 0;
     }
@@ -22,10 +21,9 @@
 }
 
 //Init method with a player name and difficulty
-- (id)initWithPlayerName:(NSString*)thePlayerName difficulty:(GameDifficulty)theDifficulty{
+- (id)initWithDifficulty:(GameDifficulty)theDifficulty{
     self = [super init];
     if (self) {
-        self.playerName = thePlayerName;
         self.difficulty = theDifficulty;
         self.score = 0;
     }

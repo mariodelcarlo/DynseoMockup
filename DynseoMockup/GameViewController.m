@@ -35,6 +35,7 @@
     [self.progressView setMinValue:0];
     [self.progressView setMaxValue:self.gameLogic.currentGame.timeAllowedForEachStep];
     [self.progressView setCurrentValue:0];
+    [self.progressView setLineColor:[UIColor colorWithRed:104/255.f green:188/255.f blue:216/255.f alpha:1]];
     [self.progressView setProgressRemainingColor:[UIColor colorWithRed:104/255.f green:188/255.f blue:216/255.f alpha:1]];
     [self.progressView setProgressColor:[UIColor colorWithRed:116/255.f green:94/255.f blue:139/255.f alpha:1]];
 }
@@ -47,6 +48,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    //Register for inactive/active states for handling pause/resume game
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
@@ -139,6 +141,7 @@
 
 
 #pragma mark private methods
+//Set the question background color depending on the game step sate in params
 -(void)updateQuestionBackgroundForState:(GameStepState)theState{
     if(theState == GameStepFailed){
         self.questionLabel.backgroundColor = [UIColor redColor];
@@ -151,12 +154,14 @@
     }
 }
 
+//Get the current response number, returns ? if nothing has been entered
 -(NSString*)currentNumberResponse{
     NSString * currentQuestionText = self.questionLabel.text;
     NSRange equalRange = [currentQuestionText rangeOfString:@"="];
     return [currentQuestionText substringFromIndex:equalRange.location+2];
 }
 
+//Concatenates the question with a nummber entered in params
 -(void)addNumberToTheResponseWithNumber:(NSNumber*)theNumber{
     NSString * currentQuestionText = self.questionLabel.text;
     NSRange equalRange = [currentQuestionText rangeOfString:@"="];

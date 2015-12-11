@@ -12,7 +12,9 @@
 #import "GameStepArithmetic.h"
 
 @interface GameLogic ()
+//Timer for the current step
 @property(nonatomic, retain) NSTimer *currentStepTimer;
+//Counter for the current step elapsed time in seconds
 @property(nonatomic, assign) int stepElapsedTime;
 @end
 
@@ -30,6 +32,7 @@
 
 #pragma mark private methods
 //Create an game with 10 aritmetic steps for a difficulty passed in param
+//Set 30s allowed for each game step
 - (void)createGameForDifficulty:(GameDifficulty)theDifficulty{
     self.currentGame = [[Game alloc] init];
     [self.currentGame setTimeAllowedForEachStep:30];
@@ -52,7 +55,8 @@
 }
 
 
-//Create an aritmetic step for a difficulty passed in param
+//Create an aritmetic game step for a difficulty passed in param
+//returns the GameStepArithmetic created
 -(GameStepArithmetic*)createGameStepForDifficulty:(GameDifficulty)theDifficulty{
     NSInteger leftNumber;
     NSInteger rightNumber;
@@ -170,19 +174,20 @@
     self.currentStepTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(stepTimerTick:) userInfo:nil repeats:YES];
 }
 
-
+//Handles the end of a game
 -(void)endGame{
     [self.currentStepTimer invalidate];
     self.currentStepTimer = nil;
     self.stepElapsedTime = 0;
 }
 
+//Handles the pause of a game
 -(void)pauseGame{
     [self.currentStepTimer invalidate];
     self.currentStepTimer = nil;
 }
 
-
+//Handles the resume of a game
 -(void)resumeGame{
     if(self.currentStepTimer !=nil){
         [self.currentStepTimer invalidate];
@@ -191,7 +196,8 @@
     self.currentStepTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(stepTimerTick:) userInfo:nil repeats:YES];
 }
 
-
+//Checks if an answer is right or not, and call the right method depending if the game step
+//is won or not
 -(void)validateAnswer:(NSNumber*)theAnswer{
     if(theAnswer != nil){
         GameStepArithmetic * step1 = self.currentGame.steps[self.currentGameStep];
