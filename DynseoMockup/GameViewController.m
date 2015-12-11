@@ -46,6 +46,13 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    [super viewWillDisappear:animated];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -193,4 +200,15 @@
     }
     [self.gameLogic validateAnswer:currentResponse];
 }
+
+#pragma mark app states
+//Will resign active->pause the game
+-(void)appWillResignActive:(NSNotification*)note{
+    [self.gameLogic pauseGame];
+}
+//Did become active->resume the game
+-(void)appDidBecomeActive:(NSNotification*)note{
+    [self.gameLogic resumeGame];
+}
+
 @end
