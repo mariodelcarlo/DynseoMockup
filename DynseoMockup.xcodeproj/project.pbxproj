@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC9B2B021C723856006C7CC7 /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = BC9B2B011C723856006C7CC7 /* Readme.md */; };
 		CF4EAEE01C186F28006FFCA1 /* DifficultyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4EAEDF1C186F28006FFCA1 /* DifficultyViewController.m */; };
 		CF9BCF811C173EF5001B01FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCF801C173EF5001B01FD /* main.m */; };
 		CF9BCF841C173EF5001B01FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9BCF831C173EF5001B01FD /* AppDelegate.m */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC9B2B011C723856006C7CC7 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		CF4EAEDE1C186F28006FFCA1 /* DifficultyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DifficultyViewController.h; sourceTree = "<group>"; };
 		CF4EAEDF1C186F28006FFCA1 /* DifficultyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DifficultyViewController.m; sourceTree = "<group>"; };
 		CF9BCF7C1C173EF5001B01FD /* DynseoMockup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynseoMockup.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +125,7 @@
 		CF9BCF731C173EF5001B01FD = {
 			isa = PBXGroup;
 			children = (
+				BC9B2B011C723856006C7CC7 /* Readme.md */,
 				CF9BCF7E1C173EF5001B01FD /* DynseoMockup */,
 				CF9BCF981C173EF6001B01FD /* DynseoMockupTests */,
 				CF9BCFA31C173EF6001B01FD /* DynseoMockupUITests */,
@@ -350,6 +353,7 @@
 			files = (
 				CF9BCFC81C17495C001B01FD /* Game.m in Sources */,
 				CF9BCFCE1C174F85001B01FD /* GameLogic.m in Sources */,
+				BC9B2B021C723856006C7CC7 /* Readme.md in Sources */,
 				CF9BCFBF1C1746F1001B01FD /* GameViewController.m in Sources */,
 				CF9BCF841C173EF5001B01FD /* AppDelegate.m in Sources */,
 				CF9BCF811C173EF5001B01FD /* main.m in Sources */,
